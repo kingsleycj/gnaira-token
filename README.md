@@ -184,7 +184,7 @@ gngn-token/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/gngn-token.git
+git clone https://github.com/kingsleycj/gngn-token.git
 
 # Install dependencies
 npm install
@@ -210,6 +210,35 @@ npx hardhat compile
 # Deploy to Base Sepolia
 npx hardhat run scripts/deploy.js --network base_sepolia
 ```
+
+### Deployment Preparation
+
+Before deploying the contract, ensure you have the following wallets set up:
+
+1. **Governor Wallet**
+   - This wallet will have GOVERNOR_ROLE
+   - Will be able to:
+     - Request mint/burn operations
+     - Execute approved operations
+     - Manage blacklist
+     - Control pause mechanism
+   - Must have Base Sepolia ETH for gas fees
+
+2. **Approver Wallet**
+   - This wallet will be the approver address
+   - Will be able to:
+     - Approve mint requests
+     - Approve burn requests
+   - Must have Base Sepolia ETH for gas fees
+
+3. **Deployer Wallet**
+   - This wallet will have DEFAULT_ADMIN_ROLE
+   - Will be able to:
+     - Grant/revoke GOVERNOR_ROLE
+     - Change approver address
+   - Must have Base Sepolia ETH for deployment and gas fees
+
+**Important**: The governor and approver addresses are set in the constructor and cannot be changed after deployment (except for the approver which can be changed by the admin). Make sure to use the correct addresses during deployment.
 
 ## Security Considerations
 
@@ -238,7 +267,7 @@ npx hardhat run scripts/deploy.js --network base_sepolia
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License
 
 ## Contact
 
