@@ -10,9 +10,17 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.3.0",
+    "dotenv": "^16.5.0",
     "hardhat": "^2.24.0"
   },
-  "dependencies": {
-    "@openzeppelin/contracts": "^5.3.0"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kingsleycj/gnaira-token.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kingsleycj/gnaira-token/issues"
+  },
+  "homepage": "https://github.com/kingsleycj/gnaira-token#readme"
 }
