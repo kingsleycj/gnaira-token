@@ -120,7 +120,7 @@ gngn-token/
    ```
    a. Request Mint (Governor)
    - Connect Governor wallet
-   - Call requestMint(to, amount)
+   - Call requestMint(to, amount) // (eg. 1000000000000000000, will mint 1 gNGN token with 18 decimals)
    - Note requestId from event
 
    b. Approve Mint (Approver)
