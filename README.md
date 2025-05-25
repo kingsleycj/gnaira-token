@@ -49,6 +49,8 @@ gngn-token/
 │   └── GNaira.sol
 ├── scripts/
 │   └── deploy.js
+├── .gitignore
+├── README.md
 ├── hardhat.config.js
 └── package.json
 ```
