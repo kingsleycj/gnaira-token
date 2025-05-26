@@ -2,9 +2,9 @@
 
 A blockchain-based solution for the Nigerian financial system, implementing a regulated digital currency on the Base network. With a Multi-Sign(an approver) feature taking away total control away from the "GOVERNOR".
 
-## Overview
+## Overview and Important Notice
 
-G-Naira (gNGN) is a regulated digital currency built on the Base network, designed to enhance transparency and accountability in Nigeria's financial sector. The project implements a multi-signature system for minting and burning tokens, with role-based access control and compliance features.
+G-Naira (gNGN) is a regulated digital currency built on the **Base network**, designed to enhance transparency and accountability in Nigeria's financial sector. The project implements a **multi-signature** system for minting and burning tokens, with role-based access control and compliance features. Like other StableCoins, such as Tether USDt(USDT), **gNGN does not have a fixed maximum supply**, the Central Bank can issue (mint) new gNGN based on market demands and reserves, and the supply can flucuate. **As of May 26, 2025, the current circulating supply of gNGN is approximately 10,000,000,000 gNGN.** The Central Bank reserves the right to **PAUSE** transactions on gNGN, as a pause feature was also integrated into the contract.
 
 ## Contract Information
 
@@ -13,26 +13,7 @@ G-Naira (gNGN) is a regulated digital currency built on the Base network, design
 - **View Contract**: [Basescan Contract](https://sepolia.basescan.org/address/0x0aF4e2C83B26A42e8a9348Cb9681BCFFa767f378)
 - **View Contract Code**: [Verified Contract](https://sepolia.basescan.org/address/0x0aF4e2C83B26A42e8a9348Cb9681BCFFa767f378#code)
 - **View Events**: [Contract Events](https://sepolia.basescan.org/address/0x0aF4e2C83B26A42e8a9348Cb9681BCFFa767f378#events)
-- **View Transactions**: [Contract Transactions](https://sepolia.basescan.org/address/0x0aF4e2C83B26A42e8a9348Cb9681BCFFa767f378#txs)
-
-### Key Events to Monitor
-1. **Mint Events**
-   - [MintRequested Events](https://sepolia.basescan.org/address/0x0aF4e2C83B26A42e8a9348Cb9681BCFFa767f378#events?q=MintRequested)
-   - [Approved Events](https://sepolia.basescan.org/address/0x0aF4e2C83B26A42e8a9348Cb9681BCFFa767f378#events?q=Approved)
-   - [Executed Events](https://sepolia.basescan.org/address/0x0aF4e2C83B26A42e8a9348Cb9681BCFFa767f378#events?q=Executed)
-
-2. **Burn Events**
-   - [BurnRequested Events](https://sepolia.basescan.org/address/0x0aF4e2C83B26A42e8a9348Cb9681BCFFa767f378#events?q=BurnRequested)
-
-3. **Blacklist Events**
-   - [Blacklist Status Changes](https://sepolia.basescan.org/address/0x0aF4e2C83B26A42e8a9348Cb9681BCFFa767f378#events?q=blacklist)
-   - [Transfer Failures due to Blacklist](https://sepolia.basescan.org/address/0x0aF4e2C83B26A42e8a9348Cb9681BCFFa767f378#events?q=Transfer)
-
-4. **Admin Events**
-   - [ApproverChanged Events](https://sepolia.basescan.org/address/0x0aF4e2C83B26A42e8a9348Cb9681BCFFa767f378#events?q=ApproverChanged)
-
-### Recent Transactions
-- [Latest Contract Interactions](https://sepolia.basescan.org/address/0x0aF4e2C83B26A42e8a9348Cb9681BCFFa767f378#txs)
+- **View Test Transactions**: [Contract Transactions](https://sepolia.basescan.org/address/0x0aF4e2C83B26A42e8a9348Cb9681BCFFa767f378#txs)
 
 ## Requirements
 
@@ -286,3 +267,7 @@ For any questions or concerns, please open an issue in the repository.
 - OpenZeppelin Contracts
 - Base Network
 - Hardhat
+
+## Creator
+
+[Kingsley Nweke](https://github.com/kingsleycj)
