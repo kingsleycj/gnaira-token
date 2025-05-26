@@ -1,6 +1,6 @@
 # G-Naira (gNGN) Token
 
-A blockchain-based solution for the Nigerian financial system, implementing a regulated digital currency on the Base network.
+A blockchain-based solution for the Nigerian financial system, implementing a regulated digital currency on the Base network. With a Multi-Sign(an approver) feature taking away total control away from the "GOVERNOR".
 
 ## Overview
 
@@ -86,21 +86,35 @@ gngn-token/
 
 ### Role-Based Access Control
 
-1. **GOVERNOR_ROLE**
-   - Request mint/burn operations
-   - Execute approved operations
-   - Manage blacklist
-   - Control pause mechanism
+| Role | Description | Key Permissions | Changeable |
+|------|-------------|----------------|------------|
+| GOVERNOR_ROLE | Primary operational role | • Request mint/burn operations<br>• Execute approved operations<br>• Manage blacklist<br>• Control pause mechanism | Yes (by Admin) |
+| Approver | Independent approval role | • Approve mint requests<br>• Approve burn requests | Yes (by Admin) |
+| DEFAULT_ADMIN_ROLE | Administrative role | • Grant/revoke GOVERNOR_ROLE<br>• Change approver address<br>• Initial contract setup | No |
 
-2. **Approver**
-   - Approve mint/burn requests
-   - Independent from GOVERNOR_ROLE
-   - Fixed address (changeable by admin)
+### Multi-Signature Features
 
-3. **DEFAULT_ADMIN_ROLE**
-   - Grant/revoke GOVERNOR_ROLE
-   - Change approver address
-   - Initial contract setup
+#### Minting Process
+| Step | Role | Action | Time Limit | Description |
+|------|------|--------|------------|-------------|
+| 1 | GOVERNOR_ROLE | Request Mint | N/A | Initiates mint request with target address and amount |
+| 2 | Approver | Approve Mint | 24 hours | Approves the mint request |
+| 3 | GOVERNOR_ROLE | Execute Mint | 48 hours | Executes the approved mint operation |
+
+#### Burning Process
+| Step | Role | Action | Time Limit | Description |
+|------|------|--------|------------|-------------|
+| 1 | GOVERNOR_ROLE | Request Burn | N/A | Initiates burn request with source address and amount |
+| 2 | Approver | Approve Burn | 24 hours | Approves the burn request |
+| 3 | GOVERNOR_ROLE | Execute Burn | 48 hours | Executes the approved burn operation |
+
+#### Security Features
+| Feature | Description | Control |
+|---------|-------------|---------|
+| Time-based Expiration | Requests expire if not approved within 24 hours or executed within 48 hours | Automatic |
+| Role Separation | Governor cannot approve their own requests | Enforced by contract |
+| Balance Verification | Burn requests verify sufficient balance before execution | Automatic |
+| Blacklist Integration | All operations check against blacklist status | Automatic |
 
 ## Testing on Base Sepolia
 
